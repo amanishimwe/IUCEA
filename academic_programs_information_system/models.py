@@ -1,9 +1,10 @@
 from django.db import models
 
 
+
 # choices for type of establishment
-establishment_choices = [('private', 'private'),('pubic','public')]
-membership = [('full member', 'full member'),('associate','associate')]
+establishment_choices = [('private', 'private'),('public','public')]
+membership = [('full member', 'full member'),('associate','associate'),('not member','not member')]
 progression = [('chartered','chartered'), ('provisional', 'provisional'),('letter_of_intent','letter_of_intent')]
 # Create your models here.
 class Country(models.Model):
