@@ -7,7 +7,7 @@ from django.db.models import Q
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.core import serializers
-
+from django.views.generic import TemplateView
 
 def university_count(request):
     universityCount = University.objects.all().count()
@@ -38,3 +38,5 @@ class ChartData(APIView):
         }
         return Response(data)
 
+class CharteredUniversitiesDetailsView(TemplateView):
+    template_name = 'apims/chartered.html'

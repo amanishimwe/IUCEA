@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+{%load static %}
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>University Register</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+    <!--Js  link for the  Charts using HighChart.Js framework-->
+   <script src="https://code.highcharts.com/highcharts.src.js"></script>
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <div class="nav-link">
+                <span class="material-icons" style="font-size :30px">dashboard</span>
+                <span style="font-size:150%">UNIVERSITY REGISTER</span></div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading" style="font-size:100%">
+            APIMS
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+               aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-university"></i>
+                <span style="font-size:100%">UNIVERSITIES</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">OverView:</h6>
+                    <a class="collapse-item" href="#">UNIVERSITIES</a>
+
+                </div>
+            </div>
+        </li>
+
+        <!-- Nav Item - Programs Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+               aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-graduation-cap"></i>
+                <span style="font-size:100%">PROGRAMS</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Programs OverView:</h6>
+                    <a class="collapse-item" href="#">Undergraduate Programs</a>
+                    <a class="collapse-item" href="#">Masters Programs</a>
+                    <a class="collapse-item" href="#">PhD programs</a>
+                    <a class="collapse-item" href="#">Science Programs</a>
+                    <a class="collapse-item" href="#">Business Programs</a>
+                    <a class="collapse-item" href="#">Engineering Programs</a>
+                </div>
+            </div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading" style="font-size:100%">
+            Extra
+        </div>
+
+        <!-- Nav Item - Regional Statistics -->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <span> <img src="{% static 'img/eac.png' %}" height="40" alt="logo"/>
+                    <span style="font-size:150%">REGIONAL INDICATORS</span></span></a>
+        </li>
+        <!-- Burundi status ---->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <span> <img src="{% static 'img/burundi.png' %}" height="40" alt="logo"/>
+                    <span style="font-size:150%">BURUNDI</span></span></a>
+        </li>
+        <!-- Kenya status ---->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <span> <img src="{% static 'img/kenya.png' %}" height="40" alt="logo"/>
+                    <span style="font-size:150%">KENYA</span></span></a>
+        </li>
+        <!-- Rwanda status ---->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <span> <img src="{% static 'img/rwanda.png' %}" height="40" alt="logo"/>
+                    <span style="font-size:150%">RWANDA</span></span></a>
+        </li>
+        <!-- South Sudan status ---->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <span> <img src="{% static 'img/southsudan.png' %}" height="40" alt="logo"/>
+                    <span style="font-size:150%">SOUTH SUDAN</span></span></a>
+        </li>
+        <!-- Tanzania status ---->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <span> <img src="{% static 'img/tanzania.png' %}" height="40" alt="logo"/>
+                    <span style="font-size:150%">TANZANIA</span></span></a>
+        </li>
+        <!-- Uganda status ---->
+        <li class="nav-item">
+            <a class="nav-link" href="charts.html">
+                <span> <img src="{% static 'img/uganda.png' %}" height="40" alt="logo"/>
+                    <span style="font-size:150%">UGANDA</span></span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Search -->
+            <form
+                    class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                           aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <img src="{% static 'img/logo.jpg' %}"/>
+                <h1 class="h3 mb-0 text-gray-800">Inter-University Council for East Africa Academic Programs Information
+                    System</h1>
+
+            </div>
+
+            <!-- Content Row -->
+            <div class="row">
+
+
+                {% block body %}
+                {% endblock body %}
+
+
+
+            </div>
+
+            <!-- Content Row -->
+
+
+
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; www.iucea.org</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+
+    <!-- Logout Modal-->
+
+</div>
+
+
+<!-- Bootstrap core JavaScript-->
+<script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+
+<!-- Page level plugins -->
+<script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
+
+<!-- Page level custom scripts -->
+<!--<script src="{% static 'js/demo/chart-area-demo.js' %}"></script>-->
+<script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
+<!-- high charts custom scrips-->
+<script src="{% static 'js/chart.js' %}"></script>
+
+
+</body>
+
+
+</html>

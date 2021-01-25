@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('',include('academic_programs_information_system.urls')),
+    path('',include(('academic_programs_information_system.urls','academic_programs_information_system'), namespace = 'academic_programs_information_system')),
     path('admin/', admin.site.urls),
 ]
