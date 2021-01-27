@@ -23,6 +23,7 @@ class University(models.Model):
     iucea_membership = models.CharField(max_length = 100,choices = membership, default = 'full member')
     type_of_establishment = models.CharField(max_length = 100, choices = establishment_choices, default = 'public')
     level_of_progression = models.CharField(max_length = 100, choices= progression, default = 'chartered')
+    website = models.URLField(max_length = 140, default ="")
 
     def __str__(self):
         return self.university_name
