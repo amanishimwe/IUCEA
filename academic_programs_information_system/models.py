@@ -6,6 +6,9 @@ from django.shortcuts import render
 establishment_choices = [('private', 'private'),('public','public')]
 membership = [('full member', 'full member'),('associate','associate'),('not member','not member')]
 progression = [('chartered','chartered'), ('provisional', 'provisional'),('letter_of_intent','letter_of_intent')]
+levels = [('Bachelors','Bachelors'),('Masters','Masters'),('Post Graduate Diploma','Post Graduate Diploma'),('Doctorate','Doctorate')]
+offering =[('Full Time','Full Time'),('Part Time','Part Time'),('Weekend','Weekend'),('Online','Online')]
+thematic =[('Science','Science'),('Engineering','Engineering'),('Business','Business')]
 # Create your models here.
 class Country(models.Model):
     class Meta:
@@ -27,3 +30,13 @@ class University(models.Model):
 
     def __str__(self):
         return self.university_name
+
+class Program(models.Model):
+    university = models.ForeignKey(University, default = 1, on_delete = models.CASCADE)
+    program_name = models.CharField(max_length = 100)
+    program_level = models.CharField(max_length = 100, choices = levels, default = 'Bachelors')
+    program_offering = models.CharField(max_length = 100, choices = offering , default = 'Full Time')
+    thematic_area = models.CharField(max_length = 100, choices = thematic , default = 'Science')
+
+    def __str__(self):
+        return self.program_name
