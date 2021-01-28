@@ -11,11 +11,22 @@ from django.views.generic import TemplateView
 from rest_framework.renderers import TemplateHTMLRenderer
 
 
-def university_count(request):
-    universityCount = University.objects.all().count()
-    template = loader.get_template('apims/index.html')
-    context = {'universityCount': universityCount}
-    return HttpResponse(template.render(context, request))
+#def university_count(request):
+#    universityCount = University.objects.all().count()
+#    template = loader.get_template('apims/index.html')
+ #   context = {'universityCount': universityCount}
+  #  return HttpResponse(template.render(context, request))
+
+class CountView(TemplateView):
+    template_name = 'apims/index.html'
+    def get_context_data(self, **kwargs):
+        context = super(CountView,self).get_context_data(**kwargs)
+        context['universityCount'] = University.objects.all().count()
+        context['programCount'] = Program.objects.all().count()
+        context['undergradCount'] = Program.objects.filter(program_level ='Bachelors').count()
+        context['postgradCount'] =Program.objects.filter(Q(program_level ='Masters') | Q(program_level ='Post Graduate Diploma') | Q(program_level ='Doctorate')).count()
+        return context
+
 
 def country_university_view(request):
 
