@@ -36,7 +36,11 @@ class ChartData(APIView):
     authentication_classes = []
     permission_classes = []
     def get(self, request, format = None):
-        universities = list(University.objects.values())
+        #universities = list(University.objects.values())
+        thematic_areas = Program.objects.values_list("thematic_area", flat = True).distinct()
+        science_programs_count = Program.objects.filter(thematic_area = "Science").count()
+        engineering_programs_count = Program.objects.filter(thematic_area = "Engineering").count()
+        business_programs_count = Program.objects.filter(thematic_area = "Business").count()
         member_universities_count = University.objects.filter(
             Q(iucea_membership='full member') | Q(iucea_membership='associate')).count()
         chartered_universities_count=University.objects.filter(level_of_progression='chartered').count()
@@ -45,11 +49,14 @@ class ChartData(APIView):
 
         labels =["Member Universities","Chartered Universities","Public Universities","Private Universities"]
         default_items =[member_universities_count,chartered_universities_count ,public_universities_count,private_universities_count]
+        thematic_areas_count =[science_programs_count,engineering_programs_count,business_programs_count]
         data = {
 
             "labels" :labels,
             "default" : default_items,
-            "universities": universities,
+           # "universities": universities,
+            "thematic_areas": thematic_areas,
+            "thematic_areas_count": thematic_areas_count,
 
         }
         return Response(data)
