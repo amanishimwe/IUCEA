@@ -11,22 +11,21 @@
         <th scope="col">PROGRAMME LEVEL</th>
         <th scope="col">PROGRAMME OFFERING</th>
         <th scope="col">THEMATIC AREA</th>
-        <th scope="col">WEBSITE</th>
+
     </tr>
 
     </thead>
 
     <tbody>
     <tr>
-        {% for program in programmes %}
+        {% for program in programs %}
+
         <th scope="row">{{ forloop.counter }}</th>
-        <td style="font-size:18px;" class="text-primary"><strong> {{program.university}}</strong></td>
-        <td style="font-size:18px;" class="text-success"><strong> {{program.program_name}}</strong></td>
-        <td style="font-size:18px;" class="text-info"><strong> {{program.program_level}}</strong></td>
-        <td style="font-size:18px;" class="text-dark"><strong> {{program.program_offering}}</strong></td>
-        <td style="font-size:18px;" class="text-success"><strong> {{program.thematic_area }}</strong></td>
-        <td style="font-size:18px;"><strong><a href="#" target="_blank">#</a></strong>
-        </td>
+        <td style="font-size:18px;" class="text-secondary"><strong>{{program.university }}</strong></td>
+        <td style="font-size:18px;" class="text-primary"><strong> {{program.program_name}}</strong></td>
+        <td style="font-size:18px;" class="text-success"><strong> {{program.program_level}}</strong></td>
+        <td style="font-size:18px;" class="text-info"><strong> {{program.program_offering}}</strong></td>
+        <td style="font-size:18px;" class="text-dark"><strong> {{program.thematic_area}}</strong></td>
     </tr>
 
     {% endfor %}

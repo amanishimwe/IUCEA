@@ -50,8 +50,14 @@
 
         <!-- Heading -->
         <div class="sidebar-heading" style="font-size:100%">
-            APIMS
+            <li>
+                <i class="fas fa-home"></i>
+                &nbsp;&nbsp;
+                <a style="color: #DDDDDD" href="{% url 'academic_programs_information_system:home' %}">HOME</a>
+            </li>
         </div>
+
+
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
@@ -65,7 +71,6 @@
                     <h6 class="collapse-header">OverView:</h6>
                     <a class="collapse-item"
                        href="{% url 'academic_programs_information_system:universitiesDetails' %}">UNIVERSITIES</a>
-
                 </div>
             </div>
         </li>
@@ -81,7 +86,7 @@
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">OverView:</h6>
-                    <a class="collapse-item" href="{% url 'academic_programs_information_system:programmesDetails' %}">PROGRAMMES</a>
+                    <a class="collapse-item" href="{% url 'academic_programs_information_system:programDetails' %}">PROGRAMMES</a>
 
                 </div>
             </div>
@@ -95,12 +100,7 @@
             Extra
         </div>
 
-        <!-- Nav Item - Regional Statistics -->
-        <li class="nav-item">
-            <a class="nav-link" href="charts.html">
-                <span> <img src="{% static 'img/eac.png' %}" height="40" alt="logo"/>
-                    <span style="font-size:150%">REGIONAL INDICATORS</span></span></a>
-        </li>
+
         <!-- Burundi status ---->
         <li class="nav-item">
             <a class="nav-link" href="charts.html">
@@ -123,7 +123,7 @@
         <li class="nav-item">
             <a class="nav-link" href="charts.html">
                 <span> <img src="{% static 'img/southsudan.png' %}" height="40" alt="logo"/>
-                    <span style="font-size:150%">SOUTH SUDAN</span></span></a>
+                    <span style="font-size:150%">S. SUDAN</span></span></a>
         </li>
         <!-- Tanzania status ---->
         <li class="nav-item">
@@ -185,7 +185,7 @@
                 <img src="{% static 'img/logo.jpg' %}"/>
 
                 <h1 class="h4 mb-0 text-gray-800">Inter-University Council for East Africa Academic Programmes
-                    Information  System</h1>
+                    Information System</h1>
                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                         class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
             </div>

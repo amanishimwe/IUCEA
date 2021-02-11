@@ -1,14 +1,10 @@
-import json
 from django.shortcuts import render
-from django.shortcuts import render
-from django.template import loader
 from .models import *
 from django.db.models import Q
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.core import serializers
 from django.views.generic import TemplateView
-from rest_framework.renderers import TemplateHTMLRenderer
+
 
 
 # def university_count(request):
@@ -78,12 +74,11 @@ class UniversitiesDetails(TemplateView):
 
         return context
 
-
 class ProgramDetails(TemplateView):
-    programme_detail_template = 'apims/programs.html'
+    template_name = 'apims/programs.html'
 
-    def get_program_data(self, **kwargs):
-        context = super(ProgramDetails, self).get_program_data(**kwargs)
-        context['programmes'] = Program.objects.all()[:10]
+    def get_context_data(self,**kwargs):
+        ctx = super(ProgramDetails,self).get_context_data(**kwargs)
+        ctx['programs'] = Program.objects.all()[:10]
 
-        return context
+        return ctx
