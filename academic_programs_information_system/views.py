@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from django.views.generic import TemplateView
 
 
-
 # def university_count(request):
 #    universityCount = University.objects.all().count()
 #    template = loader.get_template('apims/index.html')
@@ -64,8 +63,6 @@ class ChartData(APIView):
 
 
 class UniversitiesDetails(TemplateView):
-
-
     template_name = 'apims/universities.html'
 
     def get_context_data(self, **kwargs):
@@ -74,11 +71,22 @@ class UniversitiesDetails(TemplateView):
 
         return context
 
+
 class ProgramDetails(TemplateView):
     template_name = 'apims/programs.html'
 
-    def get_context_data(self,**kwargs):
-        ctx = super(ProgramDetails,self).get_context_data(**kwargs)
+    def get_context_data(self, **kwargs):
+        ctx = super(ProgramDetails, self).get_context_data(**kwargs)
         ctx['programs'] = Program.objects.all()[:10]
 
         return ctx
+
+
+class BurundiData(TemplateView):
+    template_name = 'apims/burundi.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(BurundiData,self).get_context_data(**kwargs)
+        context['universities_in_burundi'] = University.objects.filter(country_id = 7)[:10]
+
+        return  context

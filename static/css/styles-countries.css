@@ -1,0 +1,16 @@
+    .holdingcontainer{
+      width: 100%;
+      display: flex;
+      padding: 50px;
+      box-sizing: border-box;
+      flex-direction: row;
+      margin:0 auto;
+      }
+      .internalcontainerL{
+       flex: 1;
+       padding: 30px;
+       font-size:12px;
+       font-family: 'Roboto', sans-serif;
+       margin: 10px;
+       }
+

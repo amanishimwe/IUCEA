@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/styles-countries.css' %}">
+<link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+
+<div class="holdingcontainer">
+
+    <div class="internalcontainerL"><h4 style="color:#CE1127">UNIVERSITIES</h4>
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+            <th>#</th>
+            <th scope="col">UNIVERSITY NAME</th>
+            <th scope="col">TYPE OF ESTABLISHMENT</th>
+            <th scope="col">PROGRAMMES</th>
+            <tbody>
+            <tr>
+                {% for university in universities_in_burundi %}
+
+                <th scope="row">{{ forloop.counter }}</th>
+                <td style="font-size:18px;" class="text-primary"><strong><a href="">{{university}}</a> </strong></td>
+                <td style="font-size:18px;" class="text-primary"><strong><a
+                        href="">{{university.type_of_establishment}}</a> </strong></td>
+                <!-- Drop down for Programs-->
+                <td>
+
+
+                    <div class="dropdown show">
+                        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Programmes
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+
+                        </div>
+                    </div>
+
+
+                </td>
+
+
+            </tr>
+            {% endfor %}
+            </tbody>
+            </thead>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock body %}

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ChartData,UniversitiesDetails,CountView, ProgramDetails
+from .views import *
 from django.views.generic import TemplateView
 
 from . import views
@@ -13,4 +13,5 @@ urlpatterns = [
     path('api/chart/data/' , ChartData.as_view()),
     path('universities/', UniversitiesDetails.as_view(template_name = 'apims/universities.html'), name = 'universitiesDetails'),
     path('programs/',ProgramDetails.as_view(template_name = 'apims/programs.html'), name = 'programDetails'),
+    path('burundi/', BurundiData.as_view(template_name = 'apims/burundi.html'), name = 'burundiData'),
 ]
