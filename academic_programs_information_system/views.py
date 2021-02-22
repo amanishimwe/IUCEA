@@ -86,7 +86,59 @@ class BurundiData(TemplateView):
     template_name = 'apims/burundi.html'
 
     def get_context_data(self, **kwargs):
-        context = super(BurundiData,self).get_context_data(**kwargs)
-        context['universities_in_burundi'] = University.objects.filter(country_id = 7)[:10]
+        context = super(BurundiData, self).get_context_data(**kwargs)
+        # context['universities_in_burundi'] = University.objects.filter(country_id = 1)[:10]
+        # University.objects.prefetch_related('program_set')
+        context['programs_in_burundi'] = Program.objects.filter(country__country_name='Burundi')[:10]
 
-        return  context
+        return context
+
+
+class KenyaData(TemplateView):
+    template_name = 'apims/kenya.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(KenyaData, self).get_context_data(**kwargs)
+        context['programs_in_kenya'] = Program.objects.filter(country__country_name='Kenya')[:10]
+
+        return context
+
+
+class RwandaData(TemplateView):
+    template_name = 'apims/rwanda.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(RwandaData, self).get_context_data(**kwargs)
+        context['programs_in_rwanda'] = Program.objects.filter(country__country_name='Rwanda')[:10]
+
+        return context
+
+
+class SudanData(TemplateView):
+    template_name = 'apims/sudan.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(SudanData, self).get_context_data(**kwargs)
+        context['programs_in_sudan'] = Program.objects.filter(country__country_name='South Sudan')[:10]
+
+        return context
+
+
+class TanzaniaData(TemplateView):
+    template_name = 'apims/tanzania.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TanzaniaData, self).get_context_data(**kwargs)
+        context['programs_in_tanzania'] = Program.objects.filter(country__country_name='Tanzania')[:10]
+
+        return context
+
+
+class UgandaData(TemplateView):
+    template_name = 'apims/uganda.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(UgandaData, self).get_context_data(**kwargs)
+        context['programs_in_uganda'] = Program.objects.filter(country__country_name='Uganda')[:10]
+
+        return context
