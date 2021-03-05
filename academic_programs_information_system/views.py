@@ -12,6 +12,9 @@ from django.views.generic import TemplateView
 #   context = {'universityCount': universityCount}
 #  return HttpResponse(template.render(context, request))
 
+def landingpage(request):
+    return render(request, 'apims/landingpage.html')
+
 class CountView(TemplateView):
     template_name = 'apims/index.html'
 
