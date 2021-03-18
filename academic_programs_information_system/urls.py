@@ -9,7 +9,7 @@ app_name = 'academic_programs_information_system'
 urlpatterns = [
     # path('', views.university_count, name = 'university_count'),
     path('', views.landingpage, name='landingpage'),
-    path('', CountView.as_view(template_name='apims/index.html'), name='home'),
+    path('register', CountView.as_view(template_name='apims/index.html'), name='home'),
     path('api/chart/data/', ChartData.as_view()),
     path('universities/', UniversitiesDetails.as_view(template_name='apims/universities.html'),
          name='universitiesDetails'),

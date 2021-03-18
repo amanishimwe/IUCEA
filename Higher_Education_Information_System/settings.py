@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Higher_Education_Information_System.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heis',
+        'NAME': 'heisc',
         'USER': 'root',
         'PASSWORD':'',
         'HOST': 'localhost',
