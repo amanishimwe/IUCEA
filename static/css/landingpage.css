@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
 body{
-background: url('https://i.ibb.co/fvDfF8t/background.png');
+background: url({'% static "img/imgcenit.jpg' %}) 50% 0 no-repeat fixed;
 background-size:cover;
 background-repeat: no-repeat;
 font-family: 'Poppins', sans-serif;
