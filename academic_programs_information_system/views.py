@@ -16,6 +16,7 @@ def landingpage(request):
     return render(request, 'apims/landingpage.html')
 
 class CountView(TemplateView):
+
     template_name = 'apims/index.html'
 
     def get_context_data(self, **kwargs):
@@ -30,6 +31,11 @@ class CountView(TemplateView):
 
 
 def country_university_view(request):
+    if  'q' in request.GET:
+        q = request.GET['q']
+        universities = University.objects.filter(university_name__icontains=q)
+    else:
+        universities = University.objects.all()
     return render(request, 'apims/index.html', {})
 
 
